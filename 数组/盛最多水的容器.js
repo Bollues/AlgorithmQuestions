@@ -1,3 +1,8 @@
+/**
+ * 
+ * 注意点1：移动两头中数字小的那一个指针
+ */
+
 var maxArea = function(height) {
   let start = 0
   let end = height.length - 1

@@ -1,6 +1,11 @@
+/**
+ * 
+ * 
+ * 注意点1：对象的key为 nums[i]
+ * 注意点2：对象的value为 idx
+ */
+
 function twoSum(nums, target) {
-  // key: nums[i]
-  // value: idx
   let hashTable = {}
   for (let i = 0; i < nums.length; i++) {
     if (target - nums[i] in hashTable) {
