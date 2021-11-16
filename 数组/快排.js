@@ -1,18 +1,19 @@
-function quicksort(array) {
-    if (array.length <= 1) return array
-
-    let pivot = array[0];
-    let left = []; 
-    let right = [];
-
-    for (let i = 1; i < array.length; i++) {
-        array[i] < pivot ? left.push(array[i]) : right.push(array[i]);
+var sortArray = function(nums) {
+    const quickSort = (arr) => {
+        if (arr.length <= 1) return arr
+        let left = []
+        let right = []
+        const mid = Math.floor(arr.length / 2)
+        const pivot = arr.splice(mid, 1)[0]
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] < pivot) left.push(arr[i])
+            else right.push(arr[i])
+        }
+        return quickSort(left).concat(pivot, quickSort(right))
     }
-
-    return quicksort(left).concat(pivot, quicksort(right));
+    sorted = quickSort(nums)
+    return sorted
 };
 
-let unsorted = [3,2,3,1,2,4,5,5,6];
-let sorted = quicksort(unsorted);
 
-console.log('Sorted array', sorted);
+console.log(sortArray([3,2,3,1,2,4,5,5,6]));

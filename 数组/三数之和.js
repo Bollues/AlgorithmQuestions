@@ -1,29 +1,25 @@
+
 var threeSum = function(nums) {
   if (nums.length < 3) return []
   
-  out = []
-  // js中的sort是按照字符串排序的，所以25 > 100，因为2 > 1
-  nums = nums.sort((a, b) => a - b)
+  const n = nums.length - 1
+  let out = []
+  nums.sort((a, b) => a - b)  // js中的sort是按照字符串排序的，所以25 > 100，因为2 > 1
 
-  for (let first = 0; first < nums.length - 1; first++) {
-    let third = nums.length - 1
-    // 要确保前后两个first的值不同，否则会有重复解
-    if ( first == 0 || nums[first] != nums[first - 1]) {
+  for (let i = 0; i < n; i++) {
+    if (i !== 0 && nums[i] === nums[i - 1]) continue  // 要确保前后两个i的值不同，否则会有重复解
+    let m = n  // 必须放在第一个 for循环 里面
 
-      for (let second = first + 1; second < nums.length - 1; second++) {
-        // 要确保前后两个second的值不同，否则会有重复解
-        if ( second == first + 1 || nums[second] != nums[second - 1]) {
+    for (let j = i + 1; j < n; j++) {
+      if (j !== i + 1 && nums[j] === nums[j - 1]) continue  // 要确保前后两个i的值不同，否则会有重复解
 
-          while (nums[first] + nums[second] + nums[third] > 0 && third > second) {third --}
+      while (nums[i] + nums[j] + nums[m] > 0 && m > j) m --
+      if (nums[i] + nums[j] + nums[m] == 0 && j != m) out.push([nums[i], nums[j], nums[m]])   // 还要判断一次 j != m，是因为上一个循环的结果有可能使m == j
 
-          // 还要判断一次 second != third，是因为上一个循环的结果有可能使third == second
-          if (nums[first] + nums[second] + nums[third] == 0 && second != third) {out.push([nums[first], nums[second], nums[third]])}
-
-        }
-      }
     }
+
   }
   return out
 };
 
-console.log(threeSum([-1,0,1,2,-1,-4]))
+console.log(threeSum([0,0,0,0]))
