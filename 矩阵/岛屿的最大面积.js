@@ -1,3 +1,11 @@
+/**
+ * 
+ * 错误点：
+ *     dfs 里面 return 0
+ *     主函数return时考虑 area.length === 0 的情况
+ */
+
+
 const dfs = (grid, i, j, rows, cols) => {
   if (i < 0 || j < 0 || i >= rows || j >= cols || grid[i][j] === 0) return 0
 

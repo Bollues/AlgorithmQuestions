@@ -5,6 +5,13 @@
  * F(11) = min( F(10), F(9), F(6) ) + 1
  *       = min( F(5), F(4), F(1) ) + 2
  *       = 3
+ * 
+ * 
+ * 错误点
+ *    new Array(amount + 1)
+ *    i = coin
+ *    dp[i - coin] + 1
+ *    dp[amount]
  */
 
  var coinChange = function(coins, amount) {
