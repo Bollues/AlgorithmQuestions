@@ -1,7 +1,7 @@
 // function *Gen() {
 //     console.log('inside:',input1)
 //     var input1 = yield 'output1'
-    
+
 //     return input1
 // }
 // var gen = Gen()
@@ -38,5 +38,21 @@
 // a.substr(1)
 // console.log(a)
 
-a = 1
-console.log(typeof(1 * 10 + (12 - '0')))
+// a = 1
+// console.log(typeof(1 * 10 + (12 - '0')))
+
+// for (let i = 2; i--;)
+//   console.log(i)
+
+// a = [1,2,3,4]
+// console.log(Math.min(...a))
+
+// a = [1,2,3,4]
+// for (let i = 0; i < a.length; i++) {
+//   a.push(0)
+//   console.log(a)
+// }
+
+// num = 5
+// num = num ++ * 2
+// console.log(num)
