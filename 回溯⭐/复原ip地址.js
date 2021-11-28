@@ -1,6 +1,8 @@
 /**
  * 
- * 
+ * 错误点：
+ *    backtracking的参数只需要i（代表ip地址中某一数字的起始位）就够了
+ *    
  */
 
 
@@ -11,12 +13,11 @@ var restoreIpAddresses = function (s) {
   return res
 
   function backtracking(i) {
-    // path长度为4，且string用完了，就认为是有效IP地址
     if (path.length === 4 && i === sLen) {
       res.push(path.join("."))
       return
     }
-    // 遍历一般情况
+    
     for (let j = i; j < sLen; j++) {
       const str = s.substr(i, j - i + 1)
       if (str.length > 3 || +str > 255) break     // 每个数字最多3位，且不大于255

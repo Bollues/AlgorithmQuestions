@@ -2,6 +2,7 @@
  * 
  * 错误点：
  *     dfs 里面 return 0
+ *     遍历到的grid[i][j] = 0
  *     主函数return时考虑 area.length === 0 的情况
  */
 

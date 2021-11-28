@@ -1,7 +1,7 @@
 /**
  * 回溯
  * 
- * 传入参数 已经用过的数字组 a_arr， 还没用过的数字组 b_arr
+ * 回溯参数 已经用过的数字组 a_arr， 还没用过的数字组 b_arr
  */
  var permute = function(nums) {
     let res = []

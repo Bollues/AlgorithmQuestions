@@ -1,17 +1,23 @@
+/**
+ * 
+ * 回溯的条件：index、sum
+ */
+
+
 var findTargetSumWays = function (nums, target) {
+  const len = nums.length
   let count = 0
-  const backTrack = (nums, index, sum, target) => {
-    if (index === nums.length) {
-      if (sum === target) {
-        count++
-      }
+  backTrack(0, 0)
+  return count
+
+  function backTrack(index, sum) {
+    if (index === len) {
+      if (sum === target) count++
     } else {
-      backTrack(nums, index + 1, sum + nums[index], target)
-      backTrack(nums, index + 1, sum - nums[index], target)
+      backTrack(index + 1, sum + nums[index])
+      backTrack(index + 1, sum - nums[index])
     }
   }
-  backTrack(nums, 0, 0, target)
-  return count
 };
 
 console.log(findTargetSumWays([1, 1, 1, 1, 1], 3))

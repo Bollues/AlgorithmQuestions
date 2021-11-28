@@ -34,9 +34,8 @@
 // a = ['as',2,3]
 // console.log(a.join('.'))
 
-// a = 'rollingball'
-// a.substr(1)
-// console.log(a)
+// a = 'l'
+// console.log(a.substr(1).length)
 
 // a = 1
 // console.log(typeof(1 * 10 + (12 - '0')))
@@ -56,3 +55,25 @@
 // num = 5
 // num = num ++ * 2
 // console.log(num)
+
+// console.log(Math.floor(21/10))
+// console.log(0 | 21 / 10)
+
+// console.log(Math.pow(10, 2))
+// console.log(9 % 10)
+
+// a = [1,2,3,4]
+// let b = a.slice()
+// console.log(b)
+
+// a = {
+//   'name': 'rollingball',
+//   'age': 12
+// }
+// for (let k in a) {
+//   console.log(k)
+// }
+
+a = { 'count': 0 }
+Object.assign(a, {'count': a.count + 1}, {'count': a.count + 1}, {'count': a.count + 1})
+console.log(a.count)
