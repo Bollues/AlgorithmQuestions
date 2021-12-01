@@ -29,13 +29,15 @@
 
 
 // let a = [1,2,3,4]
-// console.log(a.splice(0, 1)[0])
+// a.splice(0, 1)
+// console.log(a)
 
 // a = ['as',2,3]
 // console.log(a.join('.'))
 
-// a = 'l'
-// console.log(a.substr(1).length)
+// a = '1234567890'
+// console.log(a.substr(9, 2))
+// console.log(a.charAt(2))
 
 // a = 1
 // console.log(typeof(1 * 10 + (12 - '0')))
@@ -63,7 +65,7 @@
 // console.log(9 % 10)
 
 // a = [1,2,3,4]
-// let b = a.slice()
+// let b = a.slice(0, 2)
 // console.log(b)
 
 // a = {
@@ -74,6 +76,19 @@
 //   console.log(k)
 // }
 
-a = { 'count': 0 }
-Object.assign(a, {'count': a.count + 1}, {'count': a.count + 1}, {'count': a.count + 1})
-console.log(a.count)
+// a = { 'count': 0 }
+// Object.assign(a, {'count': a.count + 1}, {'count': a.count + 1}, {'count': a.count + 1})
+// console.log(a.count)
+
+// console.log(null === undefined)
+
+// console.log(1234 / 10 | 0)
+
+// a = {
+//   name: 'rollingball'
+// }
+// console.log('age' in a)
+
+a= 'roll ing ba ll'
+a.charAt(2) = '999'
+console.log(a)
