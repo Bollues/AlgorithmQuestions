@@ -7,26 +7,26 @@
 
 
 var restoreIpAddresses = function (s) {
-  let res = [], path = []
-  const sLen = s.length
-  backtracking(0)
+  if (s.length < 4) return []
+  let res = []
+  let path = []
+  backTrack(0)
   return res
 
-  function backtracking(i) {
-    if (path.length === 4 && i === sLen) {
-      res.push(path.join("."))
+  function backTrack(index) {
+    if (index >= s.length && path.length === 4) {
+      res.push(path.join('.'))
       return
     }
-    
-    for (let j = i; j < sLen; j++) {
-      const str = s.substr(i, j - i + 1)
-      if (str.length > 3 || +str > 255) break     // 每个数字最多3位，且不大于255
-      if (str.length > 1 && str[0] === "0") break   // 如果数字大于1位，且以0开头，这种情况不合法
-      path.push(str)
-      backtracking(j + 1)
+    for (let i = index; i < s.length; i++) {
+      const ipAddr = s.substr(index, i - index + 1)
+      if (ipAddr[0] === '0' && ipAddr.length > 1) continue
+      if (path.length > 4 || Number(ipAddr) > 255) continue
+      path.push(ipAddr)
+      backTrack(i + 1)
       path.pop()
     }
   }
-}
+};
 
 console.log(restoreIpAddresses('1243243'))
