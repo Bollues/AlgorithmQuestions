@@ -89,6 +89,21 @@
 // }
 // console.log('age' in a)
 
-a= 'roll ing ba ll'
-a.charAt(2) = '999'
+// a= 'roll ing ba ll'
+// a.charAt(2) = '999'
+// console.log(a)
+
+// let a = 1234
+// let sum = 0
+// a.toString().split('').forEach(item => sum += item*1)
+// console.log(sum)
+
+// const test = {
+//   name: 'rollingball'
+// }
+// console.log(test.__proto__.constructor.prototype)
+
+// console.log(3 & 1)      // 判断奇偶
+let a = false
+a |= false
 console.log(a)
