@@ -1,4 +1,7 @@
-// 简洁版
+/**
+ * 简洁版
+ * return [...] 没有null
+ */
 var levelOrder = function(root) {
     if (!root) return []
     let line = [root]
@@ -9,11 +12,13 @@ var levelOrder = function(root) {
         if (node.left) line.push(node.left)
         if (node.right) line.push(node.right)
     }
-    console.log(res)
     return res
 };
 
-// 能过leetcode的版本
+/**
+ * 能过leetcode的版本
+ * return [[...],[...],[...]]
+ */
 var levelOrder = function(root) {
     const res = []
     if (!root) return res

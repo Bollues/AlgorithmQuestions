@@ -1,3 +1,6 @@
+/**
+ * return [[...],[...],[...]]
+ */
 var levelOrder = function(root) {
   if (!root) return []
   let queue = [root]
