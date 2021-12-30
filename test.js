@@ -104,6 +104,30 @@
 // console.log(test.__proto__.constructor.prototype)
 
 // console.log(3 & 1)      // 判断奇偶
-let a = false
-a |= false
-console.log(a)
+// let a = false
+// a |= false
+// console.log(a)
+
+// let a = 'rollingball'
+// let tmp = a[0]
+// a[0] = a[a.length - 1]
+// a[a.length - 1] = tmp
+// console.log(a)
+
+// function test(a, b = a) {
+//   console.log(a, b)
+// }
+// test(1)
+
+// let a = '1230'
+// console.log(a.split('').reverse().join(''))
+
+// let a = 123
+// console.log(~~(a / 10))
+
+// let a = '1'
+// let b = 'r'
+// console.log(a in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'])
+// console.log(b in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'])
+
+// console.log(Math.abs(1-2))

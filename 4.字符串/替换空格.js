@@ -5,11 +5,7 @@
 
 // 转成数组
 var replaceSpace = function(s) {
-  s = s.split('')
-  for (let i = 0; i < s.length; i ++) {
-      if (s[i] === ' ') s[i] = '%20'
-  }
-  return s.join('')
+  return s.split(' ').join('%20')
 };
 
 // 原地替换
