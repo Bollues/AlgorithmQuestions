@@ -1,8 +1,8 @@
 /**
- * 快慢指针
- * 
- * 注意点1：fast 初始值为 slow.next
- * 注意点2：fast一次走2步
+ * 慢指针从head开始走，一次走一步
+ * 快指针从head.next开始走，一次走两步
+ * 当快慢指针相遇时，就有环
+ * 当fast走到头时，就无环
  */
 
 var hasCycle = function(head) {
