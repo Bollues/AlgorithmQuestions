@@ -25,17 +25,17 @@ var inorderTraversal = function (root) {
  * 
  * 辅助栈
  */
- var inorderTraversal = function(root) {
+var inorderTraversal = function (root) {
   let res = []
   let stack = []
   while (root || stack.length) {
-      while (root) {
-          stack.push(root)
-          root = root.left
-      }
-      root = stack.pop()
-      res.push(root.val)
-      root = root.right
+    while (root) {
+      stack.push(root)
+      root = root.left
+    }
+    root = stack.pop()
+    res.push(root.val)
+    root = root.right
   }
   return res
 };

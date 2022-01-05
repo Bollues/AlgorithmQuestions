@@ -183,3 +183,16 @@
 
 // console.log(5 >> 1)
 
+// let a = [1, 2, 3, [1, 2, 3, [1, 2, 3]]]
+// console.log(a.toString().split(','))
+
+// console.log('a'.charCodeAt())
+
+// let a = [1, 2, 3, [1, 2, 3, [1, 2, 3]]]
+// console.log(Object.values(a))
+
+// let a = [0, 1, 2]
+// console.log(a.splice(1, 1))
+
+// const arr = new Array(5 + 1).fill(0)
+// console.log(arr)

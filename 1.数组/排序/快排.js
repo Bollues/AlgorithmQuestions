@@ -1,5 +1,7 @@
 var sortArray = function(nums) {
-    const quickSort = (arr) => {
+    return quickSort(nums)
+
+    function quickSort(arr) {
         if (arr.length <= 1) return arr
         let left = []
         let right = []
@@ -11,9 +13,8 @@ var sortArray = function(nums) {
         }
         return quickSort(left).concat(pivot, quickSort(right))
     }
-    sorted = quickSort(nums)
-    return sorted
+    
 };
 
 
-console.log(sortArray([3,2,3,1,2,4,5,5,6]));
+console.log(sortArray([2,0,2,1,1,0]));
