@@ -8,7 +8,7 @@ var levelOrder = function(root) {
     let res = []
     while (line.length > 0) {
         let node = line.shift()
-        res.push(node)
+        res.push(node.val)
         if (node.left) line.push(node.left)
         if (node.right) line.push(node.right)
     }

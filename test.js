@@ -196,3 +196,13 @@
 
 // const arr = new Array(5 + 1).fill(0)
 // console.log(arr)
+
+// let a = {
+//   'name': 'rollingball',
+//   'age': 1
+// }
+// console.log(Object.keys(a))
+
+// console.log('rollingball'.substring(1,3))
+
+// console.log(7 & 4)
