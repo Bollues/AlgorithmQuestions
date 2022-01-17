@@ -9,12 +9,12 @@
  *    先判断两个链表是否为null
  */
 
-var getIntersectionNode = function(headA, headB) {
-  if (!headA || !headB) return null
-  let h1 = headA, h2 = headB
+var getIntersectionNode = function (headA, headB) {
+  let p1 = headA
+  let p2 = headB
   while (headA !== headB) {
-      headA = headA === null ? h2 : headA.next
-      headB = headB === null ? h1 : headB.next
+    headA = headA ? headA.next : p2
+    headB = headB ? headB.next : p1
   }
   return headA
 };

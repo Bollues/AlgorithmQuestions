@@ -206,3 +206,23 @@
 // console.log('rollingball'.substring(1,3))
 
 // console.log(7 & 4)
+
+// function add (a, b) {
+//   console.log(123123)
+//   return a + b
+// }
+// const res = new add(1,2)
+// console.log(res)
+
+class Add {
+  constructor() {
+    this.a = 1
+    console.log(213123)
+  }
+  static abc() {
+    console.log(213123213213123)
+  }
+}
+const res = new Add()
+console.log(res.abc)
+Add.abc()
