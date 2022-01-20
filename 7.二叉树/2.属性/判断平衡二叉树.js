@@ -19,7 +19,6 @@ var balanced = (node) => {
 
 /**
  * 自顶向下（更好理解）
- * 
  */
 var isBalanced = function(root) {
   if (!root) return true

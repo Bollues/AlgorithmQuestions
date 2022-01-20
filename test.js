@@ -214,15 +214,98 @@
 // const res = new add(1,2)
 // console.log(res)
 
-class Add {
-  constructor() {
-    this.a = 1
-    console.log(213123)
-  }
-  static abc() {
-    console.log(213123213213123)
-  }
-}
-const res = new Add()
-console.log(res.abc)
-Add.abc()
+// class Add {
+//   constructor() {
+//     this.a = 1
+//     console.log(213123)
+//   }
+//   static abc() {
+//     console.log(213123213213123)
+//   }
+// }
+// const res = new Add()
+// console.log(res.abc)
+// Add.abc()
+
+// let obj = {name: '啥也不是'}
+// let obj2 = {age: '老不死的'}
+// let map = new WeakMap([[obj, 'rollingball'], [obj2, Infinity]])
+// console.log(map.get(obj))
+// obj = null
+// console.log(map.get(obj))
+// console.log(map.get(obj2))
+
+// let p = new Promise((resolve, reject) => {
+//   console.log(1)
+//   resolve()
+// })
+// p.then(_ => {
+//   return new Promise((resolve, reject) => {
+//     console.log(2)
+//     resolve()
+//   })
+// }).then(_ => {
+//   return new Promise((resolve, reject) => {
+//     console.log(3)
+//     // reject('err')
+//     throw new Error('err')
+//   })
+// }).then(_ => {
+//   return new Promise((resolve, reject) => {
+//     console.log(4)
+//     resolve()
+//   })
+// }).catch(e => {
+//   console.log(11111)
+//   console.log(e)
+// })
+
+// let obj = {'name': '老东西'}
+// let map = new Map(Object.entries(obj))
+// let arr = Object.entries(obj)
+// let newObj = Object.fromEntries(arr)
+// console.log(newObj)
+
+// let someThing = [0].push(1)
+// console.log(someThing)
+
+// console.log(undefined - 2)
+
+// const arr = []
+// arr.push(0)
+// arr[3] = 3
+// arr = arr
+// console.log(arr)
+
+// const map = new Map([
+//   ["foo",1],
+//   ["bar",2],
+// ])
+// console.log(map.entries().next())
+// console.log(map.entries().next())
+// console.log(typeof map.entries())
+
+// let obj = {'name': '老东西'}
+// console.log(new Map(Object.entries(obj)))
+// console.log(Object.fromEntries(new Map(Object.entries(obj))))
+
+// const arr = [0, 1, 2, 3]
+// try {
+//   arr.forEach(item => {
+//     console.log(item)
+//     if (item === 2) {
+//       throw new Error()
+//     }
+//   })
+// } catch (error) {}
+
+// function test() {
+//   console.log(arguments)
+//   for (const item of arguments) console.log(item)
+// }
+// test(1, 2, 3, 4)
+
+// let arr = [new Date()]
+// console.log(arr.toLocaleString());
+// console.log(arr.toString());
+

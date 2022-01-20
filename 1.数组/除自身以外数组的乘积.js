@@ -25,3 +25,23 @@ var productExceptSelf = function (nums) {
     return nums.map(item => allProduct / item)
   }
 };
+
+
+/**
+ * 不用除法
+ * 两次dp
+ *    从前往后计算i前面的乘积
+ *    从后往前计算i+1后面的乘积
+ */
+var constructArr = function (nums) {
+  let res = new Array(nums.length).fill(1)
+  let tmp = 1
+  for (let i = 1; i < nums.length; i++) {     // 从前往后
+    res[i] = res[i - 1] * nums[i - 1]
+  }
+  for (let i = nums.length - 2; i >= 0; i--) {     // 从后往前
+    tmp *= nums[i + 1]
+    res[i] *= tmp
+  }
+  return res
+};

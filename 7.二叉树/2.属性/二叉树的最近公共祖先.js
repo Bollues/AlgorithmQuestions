@@ -9,32 +9,14 @@ var lowestCommonAncestor = function (root, node1, node2) {
   return dfs(root)
 
   function dfs(r) {
-    if (!r || r === node1 || r === node2) return r
+    if (!r || r === node1 || r === node2) return r    // 如果找到了就return r，没找到就return null，这样就能保证只要不是node1或node2，就return null
 
     let left = dfs(r.left)
     let right = dfs(r.right)
 
-    if (right !== null && left !== null) return r
+    if (right !== null && left !== null) return r   // 这个就是公共祖先，接下来就是把这个节点往上传
 
-    if (left === null) return right
-    return left
+    if (left === null) return right     // 往上传
+    return left       // 往上传
   }
 };
-
-// 参考：https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/solution/er-cha-shu-de-zui-jin-gong-gong-zu-xian-by-leetc-2/
-var lowestCommonAncestor = function (root, node1, node2) {
-  let res
-  dfs(root)
-  return res
-
-  function dfs (r) {
-    if (!r) return false
-
-    const left = dfs (r.left)
-    const right = dfs (r.right)
-
-    if ( (left && right) || ((r.val === node1.val || r.val === node2.val) && (left || right)) ) res = root
-
-    return left || right || (r.val === node1.val || r.val === node2.val)
-  }
-}

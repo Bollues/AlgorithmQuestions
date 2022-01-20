@@ -9,30 +9,24 @@
  * 注意点6：如果s非空而最大长度为0，说明全是重复的，返回1
  */
 
-var lengthOfLongestSubstring = function(s) {
-  if (!s) {return 0}
-  const n = s.length
-  let hashSet = new Set()
-  let maxLength = 0
-  let pEnd = 0
-  for (let pStart = 0; pStart < n; ++pStart) {
-      // start指针右移
+var lengthOfLongestSubstring = function (s) {
+    let res = 0
+    let set = new Set()
+    let pEnd = 0
+    for (let pStart = 0; pStart < s.length; pStart++) {
+        // 每次右移删除当前元素的前一个元素
+        if (pStart > 0) set.delete(s.charAt(pStart - 1))        
 
-      // 每次右移删除当前元素
-      if (pStart != 0) {
-          hashSet.delete(s.charAt(pStart - 1))
-      }
-
-      // end指针右移，判断最长不重复子串
-      while (pEnd < n && !hashSet.has(s.charAt(pEnd))) {
-          hashSet.add(s.charAt(pEnd))
-          maxLength = Math.max(maxLength, pEnd - pStart + 1)
-          pEnd ++
-      }
-  }
-
-  return maxLength===0 ? 1 : maxLength
+        // end指针右移，判断最长不重复子串
+        while (pEnd < s.length && !set.has(s.charAt(pEnd))) {
+            set.add(s.charAt(pEnd))
+            pEnd += 1
+            res = Math.max(res, pEnd - pStart)
+        }
+    }
+    return res
 };
+
 
 // 95
 console.log(lengthOfLongestSubstring("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~ "))

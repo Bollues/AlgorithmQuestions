@@ -6,12 +6,12 @@
  */
 
 function twoSum(nums, target) {
-  let hashTable = {}
+  let map = {}
   for (let i = 0; i < nums.length; i++) {
-    if (target - nums[i] in hashTable) {
-      return [hashTable[target - nums[i]], i]
+    if (target - nums[i] in map) {
+      return [map[target - nums[i]], i]
     }
-    hashTable[nums[i]] = i
+    map[nums[i]] = i
   }
 }
 
