@@ -309,3 +309,19 @@
 // console.log(arr.toLocaleString());
 // console.log(arr.toString());
 
+// let arr = [0, 1]
+// console.log(arr.splice(0, 1, 2));
+// console.log(arr);
+
+// let arr = [25, 100]
+// console.log(arr.reverse());
+
+// const arr = new Array(2)
+// console.log(arr.fill(2));
+
+// console.log(Object.prototype.__proto__ === null);
+
+const obj = {}
+obj.__proto__.age = 3
+console.log(obj.age);
+console.log(obj.hasOwnProperty('ages'));
