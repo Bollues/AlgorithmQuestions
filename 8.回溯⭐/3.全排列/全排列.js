@@ -1,7 +1,6 @@
 /**
  * 不同于组合或子集问题，排列是有序的，所以[1, 2]和[2, 1]是两个集合，因此不能用index记录了
  * 对于排列问题，需要used数组
- * 
  */
  var permute = function(nums) {
     let res = []

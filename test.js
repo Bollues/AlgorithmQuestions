@@ -1,14 +1,15 @@
 // function *Gen() {
-//     console.log('inside:',input1)
-//     var input1 = yield 'output1'
-//     return input1
+//     console.log(1);
+//     yield 2
+//     console.log(3);
+//     var output = yield 4
+//     return output
 // }
 // var gen = Gen()
-// gen.next();
-// console.log(gen.next('input1'))
-// console.log(gen.next('input2'))
-// console.log(gen.next('input3'))
-// return 'input1'
+// console.log(gen.next())
+// console.log(gen.next())
+// console.log(gen.next(100))
+// console.log(gen.return());
 // var gen_obj=gen();
 // var gen_obj=counter(1);
 // console.log(gen_obj.next())
@@ -321,7 +322,90 @@
 
 // console.log(Object.prototype.__proto__ === null);
 
-const obj = {}
-obj.__proto__.age = 3
-console.log(obj.age);
-console.log(obj.hasOwnProperty('ages'));
+// const obj = {}
+// obj.__proto__.age = 3
+// console.log(obj.age);
+// console.log(obj.hasOwnProperty('ages'));
+
+// console.log([].constructor === Array);
+
+// console.log('10' & '01')
+// console.log(1 | 2)
+// console.log(parseInt('1110', 2));
+// console.log(parseInt('1110', 2));
+
+// console.log('1213'.indexOf(1));
+
+// function test(A) {
+//   let start = 0
+//   let res = 0
+//   while(start < A.length) { 
+//     let end = start
+//     while(A[end] === A[start]) end += 1
+//     const delTimes = end - start
+//     const insertTimes = Math.abs(A[start] - (end - start))
+//     res += Math.min(delTimes, insertTimes)
+//     start = end
+//   }
+//   return res
+// }
+// console.log(test([1,1,1,1,3,3,4,4,4,4,4]));
+
+// const arr = [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+// for (const key in arr) {
+//   console.log(key);
+// }
+
+// console.log(Math.pow(2, 53));
+// console.log(Math.pow(2, 53) + 1);
+// console.log(Math.pow(2, 53) + 2);
+// console.log(parseInt('100000000000000000000000000000000000000000000000000000', 2));
+
+// setTimeout(() => console.log('a'), 3000)
+// const time1 = new Date().getTime()
+// while (new Date().getTime() - time1 < 1500) { }
+// setTimeout(() => console.log('b'), 1000)
+
+/**
+ * input: a=[1,[2,[3,[4,null]]]]
+ * output: b=[4,[3,[2,[1,null]]]] 
+ */
+// function test(arr) {
+//     const nums = []
+//     backTrack(arr)
+//     dfs(arr, nums.length - 1)
+//     return arr
+
+//     function backTrack(subArr) {
+//         if (!subArr[1]) {
+//             nums.push(subArr[0])
+//             return
+//         }
+//         nums.push(subArr[0])
+//         backTrack(subArr[1])
+//     }
+
+//     function dfs(subArr, index) {
+//         if (index < 0) return
+//         subArr[0] = nums[index]
+//         dfs(subArr[1], index - 1)
+//     }
+// }
+// console.log(test([1,[2,[3,[4,null]]]]));
+
+// for(var i = 0; i < 5; i++) {
+//   setTimeout(() => {
+//     console.log(i);
+//   })
+// }
+// for(var i = 0; i < 5; i++) {
+//   (function(i) {
+//     setTimeout(() => {
+//       console.log(i);
+//     })
+//   })(i)
+// }
+
+let a = 0, b = 1, c = 2;
+[a, b, c] = [b, c, a];
+console.log(a, b, c);

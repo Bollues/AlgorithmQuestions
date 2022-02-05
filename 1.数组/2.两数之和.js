@@ -1,8 +1,8 @@
 /**
+ * 用map存target - nums[i] 和 index
  * 
- * 
- * 注意点1：对象的key为 nums[i]
- * 注意点2：对象的value为 idx
+ * 对象的key为 nums[i]
+ * 对象的value为 idx
  */
 
 function twoSum(nums, target) {
