@@ -406,6 +406,22 @@
 //   })(i)
 // }
 
-let a = 0, b = 1, c = 2;
-[a, b, c] = [b, c, a];
-console.log(a, b, c);
+// let a = 0, b = 1, c = 2;
+// [a, b, c] = [b, c, a];
+// console.log(a, b, c);
+
+// let arr = [{ id: 1 }, { id: 2 }, { id: 2 }]
+// let newArr = arr.filter((item, index) => {
+//   return arr.findIndex(_item => _item.id === item.id) === index
+// })
+// console.log(newArr);
+
+// function test(arg1, arg2, arg3) {
+//   return
+// }
+// console.log(test.length);
+
+// const arr = [0,1,2,3,4,[5,6,[7,8]]]
+// const newArr = arr.slice(0)
+// newArr[5][0] = 0
+// console.log(arr);
