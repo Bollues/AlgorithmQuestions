@@ -19,7 +19,7 @@
   dp[0] = 0
 
   // 先考虑只用第一枚银币，再考虑只用前两枚硬币 ... ，最后考虑用上所有的硬币
-  for (coin of coins) {
+  for (let coin of coins) {
     // 0-amount的每种情况，都要求所用的银币数最少
     for (let i = coin; i <= amount; i ++) {
       dp[i] = Math.min(dp[i], dp[i - coin] + 1)

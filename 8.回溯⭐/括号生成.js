@@ -9,7 +9,10 @@
 
 var generateParenthesis = function (n) {
   let res = []
-  const generate = (leftRemain, rightRemain, str) => {
+  generate(n, n, '')
+  return res
+
+  function generate (leftRemain, rightRemain, str) {
     if (str.length === 2 * n) {   // 递归终止条件
       res.push(str)
       return
@@ -19,8 +22,6 @@ var generateParenthesis = function (n) {
     // 只要右括号的数量 > 左括号的数量，就能选择
     if (rightRemain > leftRemain) generate(leftRemain, rightRemain - 1, str + ')')
   }
-  generate(n, n, '')
-  return res
 }
 
 console.log(generateParenthesis(2))

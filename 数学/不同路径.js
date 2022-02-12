@@ -15,9 +15,8 @@ var uniquePaths = function(n, m) {
 
 // 利用组合数递推公式算排列数
 // const helper = (n, m) => {
-//   if(m === 0) return 1
+//   if(m === 0 || m === n) return 1
 //   if(n === 1) return 1
-//   if(m === n) return 1
 //   else return helper(n-1, m-1) + helper(n-1, m)
 // }
 // var uniquePaths = function(n, m) {

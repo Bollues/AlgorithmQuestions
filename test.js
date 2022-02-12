@@ -425,3 +425,5 @@
 // const newArr = arr.slice(0)
 // newArr[5][0] = 0
 // console.log(arr);
+
+Object.hasOwnProperty

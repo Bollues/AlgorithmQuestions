@@ -1,6 +1,6 @@
 /**
- * 递归
- * 秒懂： https://leetcode-cn.com/problems/merge-two-sorted-lists/solution/yi-kan-jiu-hui-yi-xie-jiu-fei-xiang-jie-di-gui-by-/
+ * 递归，4个if
+ * 谁val小，next就是谁，进入递归，return小的
  * 
  * 追问，当 l1.val === l2.val
  * 

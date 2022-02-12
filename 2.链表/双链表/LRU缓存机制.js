@@ -1,5 +1,6 @@
 /**
  * 秒懂： https://leetcode-cn.com/problems/lru-cache/solution/bu-yong-yu-yan-nei-jian-de-map-gua-dang-feng-zhuan/
+ * 双向链表、哈希表
  */
 
 // 定义双向链表
