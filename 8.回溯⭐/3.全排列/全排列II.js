@@ -14,19 +14,19 @@ var permuteUnique = function(nums) {
   return res
 
   function backTrack (used) {
-      if (path.length === nums.length) {
-          res.push([...path])
-          return
-      }
-      let flag = 999        // 用flag 记录同一树层中相同的元素
-      for (let i = 0; i < nums.length; i++) {
-          if (used[i] || flag === nums[i]) continue
-          path.push(nums[i])
-          used[i] = true
-          flag = nums[i]        // 
-          backTrack(used)
-          path.pop()
-          used[i] = false
-      }
+    if (path.length === nums.length) {
+        res.push([...path])
+        return
+    }
+    let flag = 999        // 用flag 记录同一树层中相同的元素
+    for (let i = 0; i < nums.length; i++) {
+        if (used[i] || flag === nums[i]) continue
+        path.push(nums[i])
+        used[i] = true
+        flag = nums[i]        // 
+        backTrack(used)
+        path.pop()
+        used[i] = false
+    }
   }
 };

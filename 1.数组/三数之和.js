@@ -1,25 +1,24 @@
+/**
+ * 3指针，第3个指针从后往前遍历
+ */
 
 var threeSum = function(nums) {
-  if (nums.length < 3) return []
-  
-  const n = nums.length - 1
-  let out = []
-  nums.sort((a, b) => a - b)  // js中的sort是按照字符串排序的，所以25 > 100，因为2 > 1
+  const len = nums.length
+  nums.sort((a, b) => a - b)
+  let p3 = len - 1
+  let ans = []
 
-  for (let i = 0; i < n; i++) {
-    if (i !== 0 && nums[i] === nums[i - 1]) continue  // 要确保前后两个i的值不同，否则会有重复解
-    let m = n  // 必须放在第一个 for循环 里面
-
-    for (let j = i + 1; j < n; j++) {
-      if (j !== i + 1 && nums[j] === nums[j - 1]) continue  // 要确保前后两个i的值不同，否则会有重复解
-
-      while (nums[i] + nums[j] + nums[m] > 0 && m > j) m --
-      if (nums[i] + nums[j] + nums[m] == 0 && j != m) out.push([nums[i], nums[j], nums[m]])   // 还要判断一次 j != m，是因为上一个循环的结果有可能使m == j
-
-    }
-
+  for (let p1 = 0; p1 < len; p1++) {
+      if (p1 !== 0 && nums[p1] === nums[p1 - 1]) continue   // 要确保前后两个i的值不同，否则会有重复解
+      p3 = len - 1                                    // 必须重置
+      for (let p2 = p1 + 1; p2 < len; p2++) {
+          if (p2 !== p1 + 1 && nums[p2] === nums[p2 - 1]) continue      // 要确保前后两个i的值不同，否则会有重复解
+          while ((nums[p1] + nums[p2] + nums[p3]) > 0) p3 -= 1
+          if ((nums[p1] + nums[p2] + nums[p3]) === 0 && p2 < p3) ans.push([nums[p1], nums[p2], nums[p3]])       // p3有可能<= p2
+      }
   }
-  return out
+
+  return ans
 };
 
 console.log(threeSum([0,0,0,0]))

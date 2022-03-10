@@ -1,6 +1,7 @@
 /**
  * 自底向上（时间复杂度更小）
  * 不平衡就返回-1，平衡就返回树的深度
+ * On On
  */
 
 var isBalanced = function (root) {
@@ -16,9 +17,10 @@ var balanced = (node) => {
 }
 
 
-
 /**
  * 自顶向下（更好理解）
+ * 遍历每个节点，判断以该节点为root的话，左右节点是否平衡
+ * On^2 On
  */
 var isBalanced = function(root) {
   if (!root) return true

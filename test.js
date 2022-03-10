@@ -426,4 +426,215 @@
 // newArr[5][0] = 0
 // console.log(arr);
 
-Object.hasOwnProperty
+// Object.hasOwnProperty
+
+/**
+ * null
+ * "" or " "
+ * {}
+ * []
+ */
+// function test(input_JSON) {
+//   let obj = JSON.parse(input_JSON)
+//   helper(obj)
+//   return JSON.stringify(obj)
+
+//   function helper(obj) {
+//     for (let key in obj) {
+//       if (obj[key] instanceof Object && obj[key] !== {}) {   // 递归查看子元素是否满足条件
+//         helper(obj[key])
+//       }
+//       if (!obj[key] || (obj[key] instanceof Object && Object.keys(obj[key]).length === 0) || (Array.isArray(obj[key]) && obj[key].length === 0) || obj[key] === " " || obj[key] === "") {
+//         delete obj[key]
+//       }
+//     }
+
+//     for (let key in obj) {    // 某个子元素内所有元素都满足条件
+//       if (obj[key] === {}) {
+//         delete obj[key]
+//       }
+//     }
+//   }
+// }
+// let test1 = {
+//   key1: "",
+//   key2: [],
+//   key3: {
+//     innerKey: " "
+//   } 
+// }
+// let test2 = {
+//   key1: "",
+//   key2: [],
+//   key3: {
+//     innerKey: {
+//       _innerKey: " "
+//     }
+//   },
+//   key4: "111",
+//   key5: undefined
+// }
+// console.log(test(JSON.stringify(test2)))
+
+// var a = 3;
+// (function (){
+//     console.log(a);
+//     var a = 4;
+// })()
+
+// var a = 3;
+// (function (){
+//     console.log(a);
+//     let a = 4;
+// })()
+
+// console.log(undefined - 2)
+
+// new Promise(resolve => {
+//   console.log(1);
+//   resolve();
+// }).then(() => {
+//    console.log(4);
+// })
+// setTimeout(() => console.log(2), 0);
+// console.log(3);
+
+// console.log((0.1+0.2).toFixed(20))
+
+// const F = function () {}
+// Object.prototype.a = function () {}
+// Function.prototype.b = function () {}
+// console.log(Function.prototype)
+// const f = new F()
+// console.log(f.a)
+// console.log(f.b)
+// console.log(F.a)
+// console.log(F.b)
+
+// const a = Number('-23+45')
+// const b = parseInt('-23+45', 10)
+// console.log(a, b)
+
+// var obj = {
+//   value : 'obj',
+//   fn : function(){ 
+//     console.log(this)
+//   },
+//   self: this
+// }
+// var fn = obj.fn;
+// obj.fn();
+// console.log(obj.self)
+
+// var fn = () => {console.log('func')}
+// var obj = new fn();
+
+// var a = 0;
+// function Parent(){
+//   this.a = 1;
+//   return this;
+// }
+// Parent.a = 2;         // Parent本质上也是一个对象，这个操作相当于给Parent对象上加了一个a属性，但是这与Parent方法没有关联
+// Parent.prototype={
+//   a : 3,
+//   setA: function(value){
+//     this.a = value;
+//     return this;
+//   }
+// }
+// console.log(Parent() === globalThis)
+// console.log(new Parent().a);            // 2   1   this指向由构造函数Parent生成的对象
+// console.log(Parent().a);                // 3   1   this指向globalThis
+// console.log(new Parent().setA(4).a);    // 4
+// console.log(a);                         // 0
+// console.log(Parent().setA(5).a);        // 5   TypeError: Parent(...).setA is not a function
+
+// window.name = 'ByteDance'; 
+// function A() {
+//   this.name = 123;
+// }
+// A.prototype.getA = function () {
+//   console.log(this);        // 非严格模式下，funciton的this默认指向window
+//   return this.name + 1;
+// }
+// let c = new A();
+// let funcA = c.getA;
+// funcA();            // ByteDance1
+
+// function Constructor() {
+//   this.a = '1'
+//   this.getA = function () {
+//     return this.a
+//   }
+// }
+// const obj = new Constructor();
+// obj.a = '2'
+// console.log(obj)
+// console.log(obj.getA())
+
+// let state = ''
+// const p = new Promise((resolve, reject) => {
+//   // console.log('start')
+//   state = 'pending'
+//   resolve(1)
+//   // reject(2)
+// })
+// p.catch(err => {
+//   state='rejected'
+//   return err
+// })
+// p.then(() => {
+//   state='fullfilled'
+// console.log(state)
+// })
+// console.log(0)
+// async function foo() {
+//   await new Promise((resolve, reject) => {console.log(state)})
+// }
+// foo()
+// let fn = (p)=>{
+//   let state = 'pending'
+//   // await p
+//   // await p.then(res=>{
+//   //   state = this.PromiseStatus
+//   // })
+//   console.log(.all())
+//   // return state
+//   // console.log(p.__PromiseStatus__)
+// }
+// fn(p)
+
+// async function renderPage(id) {
+//   try {
+//     const data = await request(id);
+//     if (data.code === 0) {
+//       renderUI(data);
+//     } else {
+//       uploadError(data);
+//       toast('服务器错误');
+//     }
+//   } catch (err) {
+//     uploadError(err);
+//     toast('渲染错误');
+//   }
+// }
+// function renderPage(id) {
+//   return new promise((resolve, reject) => {
+//     try {
+//       const data = request(id)
+//       if (data.code === 0) {
+//         resolve(data)
+//       } else {
+//         reject(data, '服务器错误')
+//       }
+//     } catch (error) {
+//       reject(error, '渲染错误')
+//     }
+//   }).then((res) => {
+//     renderUI(res);
+//   }).catch((err, msg) => {
+//     uploadError(err);
+//     toast(msg);
+//   })
+// }
+

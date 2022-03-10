@@ -7,16 +7,15 @@
  */
 var inorderTraversal = function (root) {
   let out = []
-
-  const mid = (r) => {
-    if (!r) return
-    if (r.left) mid(r.left)
-    out.push(r.val)
-    if (r.right) mid(r.right)
-  }
-
-  mid(root)
+  dfs(root)
   return out
+
+  function dfs(r) {
+    if (!r) return
+    if (r.left) dfs(r.left)
+    out.push(r.val)
+    if (r.right) dfs(r.right)
+  }
 };
 
 
@@ -39,10 +38,3 @@ var inorderTraversal = function (root) {
   }
   return res
 };
-
-
-/**
- * Morris 中序遍历
- * 时空 n 1
- *
- */

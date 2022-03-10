@@ -5,15 +5,15 @@
  */
 
 
-var reverseList = function(head) {
+var reverseList = function (head) {
   if (!head) return null
   let pre = null
   let cur = head
   while (cur) {
-      const tmp = cur.next
-      cur.next = pre
-      pre = cur
-      cur = tmp
+    const tmp = cur.next
+    cur.next = pre
+    pre = cur
+    cur = tmp
   }
   return pre
 };

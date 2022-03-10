@@ -6,16 +6,17 @@
 // 递归
 var kthSmallest = function (root, k) {
   let res
-  const mid = (r) => {
-    if (r.left) mid(r.left)
+  dfs(root)
+  return res
+
+  function dfs(r) {
+    if (r.left) dfs(r.left)
     if (--k === 0) {
       res = r.val
       return
     }
-    if (r.right) mid(r.right)
+    if (r.right) dfs(r.right)
   }
-  mid(root)
-  return res
 };
 
 // 非递归
