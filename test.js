@@ -638,3 +638,151 @@
 //   })
 // }
 
+// arr = [1, 1, -1, -1]
+// let len = arr.length
+// let dp = new Array(len+1).fill(0)
+// for (let i = 0; i<len; i++) {
+//     dp[i] = new Array(len+1).fill(0)
+// }
+// for (let i = 0; i<len; i++) {
+//     for (let j = 0; j<len; j++) {
+//         dp[i][j] = new Array(2).fill(0)
+//     }
+// }
+// for (let i=0; i<len; i++) {
+//     for (let j = i; j<len; j++) {
+//         if (i === j) {
+//             if (arr[i] === 1) {
+//                 dp[i][j][1] = 1
+//             }
+//         } else {
+//             if (arr[i] === 1) {
+//                 dp[i][j][1] = dp[i][j-1][1] + 1
+//             } else {
+//                 dp[i][j][0] = dp[i][j-1][0] + 1
+//             }
+//         }
+//     }
+// }
+// console.log(dp[0][len-1][1])
+
+// 美团笔试第二题
+// arr = [[4], [1, 1, -1, -1]]
+// let n = arr[1].length
+// let sum = 0
+// let dp = new Array(n)
+// for (let i = 0; i < n; i++) {
+//   dp[i] = new Array(n).fill(false)
+// }
+// for (let i = 0; i < n; i++) {
+//   for (let j = i; j < n; j++) {
+//     if (i == j) {
+//       if (arr[j] == 1) {
+//         dp[i][j] = true
+//       }
+//     } else {
+//       if (arr[j] == 1) {
+//         if (dp[i][j - 1] == true) {
+//           dp[i][j] = true
+//         }
+//       } else {
+//         if (dp[i][j - 1] == false) {
+//           dp[i][j] = true
+//         }
+//       }
+//     }
+//   }
+// }
+// for (let i = 0; i < n; i++) {
+//   for (let j = i; j < n; j++) {
+//     if (dp[i][j] == true) {
+//       sum += 1
+//     }
+//   }
+// }
+// console.log(sum)
+
+// function foo (nums){
+//   const row = nums.length
+//   const col = nums[0].length
+//   let ans = 0
+//   for (let i = 0; i < row; i++) {
+//     for (let j = 0; j < col; j++) {
+//       if (nums[i][j] === 0) {
+//         helper(i, j)
+//       }
+//     }
+//   }
+//   return ans
+
+//   function helper(i, j) {
+//     for (let rowStart = i - 1; rowStart >= 0; rowStart--) {
+//       if (nums[rowStart][j] === 1) {
+//         ans += 1
+//         break
+//       }
+//     }
+//     for (let rowStart = i + 1; rowStart < row; rowStart++) {
+//       if (nums[rowStart][j] === 1) {
+//         ans += 1
+//         break
+//       }
+//     }
+//     for (let colStart = j - 1; colStart >= 0; colStart--) {
+//       if (nums[i][colStart] === 1) {
+//         ans += 1
+//         break
+//       }
+//     }
+//     for (let colStart = j + 1; colStart < col; colStart++) {
+//       if (nums[i][colStart] === 1) {
+//         ans += 1
+//         break
+//       }
+//     }
+//   }
+// }
+// const arr = [
+//   [0,1,0,0],
+//   [1,0,1,0]
+// ]
+// console.log(foo(arr))
+
+/**
+b b r
+g b b
+b r g
+
+* * r
+g * *
+b r g
+
+g r r
+b * g
+* * *
+
+g r r
+b b g
+r r r
+
+rbbbg  -> bbg
+brgbb  -> gbb
+rbgbg  -> bgbg
+ */
+
+// const obj = Object.create(null, {
+//   name: {
+//     value: 'rollingball',
+//     writable: true,
+//     enumerable: true,
+//     configurable: true
+//   }
+// })
+// // console.log(obj.__proto__)
+// // console.log(Reflect.ownKeys(obj))
+// console.log(Object.getOwnPropertyNames(obj))
+
+// console.log(Object.prototype.toString.call(null))
+
+// const obj = {}
+// console.log(Object.values(obj))

@@ -12,10 +12,9 @@ const findLength = (A, B) => {
   let res = 0;
   for (let i = 1; i <= m; i++) {
     for (let j = n; j >= 1; j--) {
-      dp[j] = A[i - 1] == B[j - 1] ? dp[j - 1] + 1 : 0;
+      dp[j] = (A[i - 1] == B[j - 1]) ? dp[j - 1] + 1 : 0;
       res = Math.max(dp[j], res);
     }
-    console.log(dp)
   }
   return res;
 };
